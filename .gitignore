@@ -1,1 +1,16 @@
+# Visual Studio local state
 .vs/
+
+# CMake build trees
+build/
+out/
+cmake-build-*/
+
+# Compiler / linker output
+*.exe
+*.obj
+*.o
+*.a
+*.dll
+*.pdb
+*.ilk

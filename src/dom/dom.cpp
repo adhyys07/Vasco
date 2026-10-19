@@ -1,4 +1,4 @@
-#include "dom.h"
+#include "dom/dom.h"
 #include <cstdio>
 
 const Node* find_first(const Node* root, const std::string& tag) {
@@ -16,7 +16,7 @@ void dump_tree(const Node* node, int depth) {
 	if (!node) return;
     for (int i = 0; i < depth; i++) std::fputs("  ", stdout);
 
-	switch = (node->type) {
+	switch (node->type) {
 		case NodeType::Document:
 			std::fputs("#document\n", stdout);
             break;
@@ -29,7 +29,7 @@ void dump_tree(const Node* node, int depth) {
             break;
         }
         case NodeType::Text: {
-            std::string t - node->text;
+            std::string t = node->text;
             if (t.size() > 60) t = t.substr(0, 57) + "...";
             for (char& c : t) {
                 if (c == '\n' || c == '\r' || c == '\t') c = ' ';

@@ -2,7 +2,7 @@
 #include <memory>
 #include <string>
 
-#include "dom.h"
+#include "dom/dom.h"
 
 std::unique_ptr<Node> parse_html(const std::string& source);
  

@@ -1,14 +1,15 @@
 #include <SDL.h>
+
 #include <cstdio>
 #include <vector>
-#include "dom.h>
 
-#include "html.h"
-#include "http.h"
-#include "layout.h"
-#include "render.h"
-#include "style.h"
-#include "url.h"
+#include "dom/dom.h"
+#include "dom/html.h"
+#include "layout/layout.h"
+#include "layout/style.h"
+#include "net/http.h"
+#include "net/url.h"
+#include "ui/render.h"
  
 namespace {
 
@@ -73,7 +74,7 @@ struct Browser {
         if (scroll != before) needs_paint = true;
     }
 
-    void click(int mouse_x, mouse_y) {
+    void click(int mouse_x, int mouse_y) {
         int doc_y = mouse_y + scroll;
         for (const TextRun& run : display_list.texts) {
             if (run.href.empty()) continue;
@@ -95,7 +96,7 @@ struct Browser {
     void back() {
         if (history.empty()) return;
         Url previous = history.back();
-        history.pop_back()
+        history.pop_back();
         load(previous, false);
     }
 };

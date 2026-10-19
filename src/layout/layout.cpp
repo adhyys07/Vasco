@@ -1,6 +1,6 @@
-#include "layout.h"
+#include "layout/layout.h"
 
-isplayList layout_document(const Node* document, int viewport_width, FontMetrics& metrics) {
+DisplayList layout_document(const Node* document, int viewport_width, FontMetrics& metrics) {
     (void)document;
     (void)viewport_width;
     (void)metrics;

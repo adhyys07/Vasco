@@ -4,10 +4,10 @@
 #include <tuple>
 #include <vector>
 
-#include "dom.h"
-#include "style.h"
+#include "dom/dom.h"
+#include "layout/style.h"
 
-struct FontKey = {
+struct FontKey {
 	int px = 16;
 	bool bold = false;
 	bool italic = false;
@@ -45,6 +45,8 @@ public:
     virtual int measure(const std::string& utf8, const FontKey& font) = 0;
     virtual int line_height(const FontKey& font) = 0;
     virtual int ascent(const FontKey& font) = 0;  
-    constexpr int kBaseFontPx = 16;
+};
+
+constexpr int kBaseFontPx = 16;
  
 DisplayList layout_document(const Node* document, int viewport_width, FontMetrics& metrics);
